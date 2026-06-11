@@ -1111,6 +1111,9 @@
       .payment-methods { grid-template-columns: 1fr 1fr; }
       .expect-grid { grid-template-columns: 1fr; }
       [style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; gap: 36px !important; }
+      .story-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+      .story-grid > div:first-child { order: 2; }
+      .story-grid > div:last-child { order: 1; }
     }
     @media (max-width: 640px) {
       .also-grid { grid-template-columns: 1fr; }
