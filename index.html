@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Cornerstone Exterior Cleaning Services — Professional pressure washing and soft washing in Worcester, MA and the greater Worcester area. Driveways, house siding, windows. Christian-owned. Free estimates." />
+  <meta name="description" content="Cornerstone Exterior Cleaning Services — Professional pressure washing and soft washing in Worcester, MA and the 495 corridor. Driveways, house siding, windows. Christian-owned. Free estimates." />
   <meta name="keywords" content="pressure washing Worcester MA, soft washing Shrewsbury, driveway cleaning Northborough, house washing Westborough, exterior cleaning Grafton, window washing Worcester" />
   <title>Cornerstone Exterior Cleaning Services | Worcester, MA</title>
 
@@ -11,7 +11,740 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --navy-light: #243559;
+      --stone:      #5C5C4E;
+      --stone-light:#8A8A78;
+      --cream:      #F7F4EE;
+      --cream-dark: #EDE9E0;
+      --gold:       #B8892A;
+      --gold-light: #D4A83E;
+      --white:      #FFFFFF;
+      --text-dark:  #1A1A1A;
+      --text-mid:   #444440;
+      --text-muted: #6B6B60;
+      --border:     rgba(0,0,0,0.10);
+      --radius:     6px;
+      --radius-lg:  12px;
+      --shadow-sm:  0 1px 3px rgba(0,0,0,0.08);
+      --shadow-md:  0 4px 16px rgba(0,0,0,0.10);
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Source Sans 3', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--text-dark);
+      background: var(--white);
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ── UTILITY ─────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      border: 2px solid transparent;
+      text-align: center;
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--white);
+      border-color: var(--gold);
+    }
+    .btn-primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border-color: rgba(255,255,255,0.6);
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.12); border-color: var(--white); }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .section-body {
+      font-size: 16px;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    /* ── TOPBAR ──────────────────────────────────── */
+    .topbar {
+      background: var(--navy);
+      color: rgba(255,255,255,0.75);
+      font-size: 13px;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .topbar a { color: rgba(255,255,255,0.85); }
+    .topbar a:hover { color: var(--white); }
+    .topbar-inner {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .topbar-inner span { display: flex; align-items: center; gap: 6px; }
+
+    /* ── NAV ─────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .nav-logo {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+    .nav-logo-name {
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.01em;
+    }
+    .nav-logo-sub {
+      font-size: 11px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--stone-light);
+      font-weight: 500;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-mid);
+      transition: color 0.15s;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a:hover { color: var(--navy); }
+    .nav-cta { margin-left: 8px; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--navy);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      padding: 16px 24px 20px;
+      gap: 2px;
+    }
+    .mobile-menu a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-mid);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+    .mobile-menu a:last-child { border-bottom: none; }
+    .mobile-menu .btn { margin-top: 12px; width: 100%; }
+    .mobile-menu.open { display: flex; }
+
+    /* ── HERO ────────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: var(--navy);
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          160deg,
+          rgba(27,42,74,0.92) 0%,
+          rgba(27,42,74,0.78) 50%,
+          rgba(27,42,74,0.70) 100%
+        );
+      z-index: 1;
+    }
+
+    /* placeholder pattern until real photo is added */
+    .hero-bg-img {
+      position: absolute;
+      inset: 0;
+      background-color: #243559;
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,0.015) 0px,
+          rgba(255,255,255,0.015) 1px,
+          transparent 1px,
+          transparent 40px
+        );
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 80px 0;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 20px;
+      max-width: 720px;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      color: var(--gold-light);
+    }
+
+    .hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: rgba(255,255,255,0.78);
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .hero-verse {
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      max-width: 480px;
+    }
+    .hero-verse blockquote {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-style: italic;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+    .hero-verse cite {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      font-style: normal;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      font-weight: 500;
+    }
+
+    /* ── TRUST BAR ───────────────────────────────── */
+    .trust-bar {
+      background: var(--cream);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 16px 0;
+    }
+    .trust-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 8px 28px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--stone);
+    }
+    .trust-check {
+      width: 16px;
+      height: 16px;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .trust-check svg {
+      width: 9px;
+      height: 9px;
+      stroke: var(--white);
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    /* ── INTRO ───────────────────────────────────── */
+    .intro {
+      padding: 88px 0;
+      background: var(--white);
+    }
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .intro-image {
+      background: var(--cream-dark);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .intro-image-placeholder {
+      color: var(--stone-light);
+      font-size: 13px;
+      text-align: center;
+      padding: 24px;
+    }
+    .intro-text p {
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+    .intro-text p:last-child { margin-bottom: 0; }
+    .intro-quote {
+      margin-top: 28px;
+      padding: 20px 24px;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+    .intro-quote p {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-style: italic;
+      color: var(--stone);
+      margin-bottom: 6px !important;
+    }
+    .intro-quote cite {
+      font-size: 12px;
+      font-style: normal;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ── SERVICES ────────────────────────────────── */
+    .services {
+      padding: 88px 0;
+      background: var(--cream);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .services-header .section-body {
+      margin: 0 auto;
+      text-align: center;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      border: 1px solid var(--border);
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .service-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      background: var(--navy);
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .service-icon svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--gold-light);
+      stroke-width: 1.5;
+      fill: none;
+    }
+    .service-name {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .service-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    /* ── WHY US ──────────────────────────────────── */
+    .why {
+      padding: 88px 0;
+      background: var(--white);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .why-points {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .why-point {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .why-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--navy);
+      color: var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      font-family: var(--font-display);
+      margin-top: 2px;
+    }
+    .why-point-title {
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+    .why-point-body {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .why-statement {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 40px 36px;
+      color: var(--white);
+    }
+    .why-statement-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.3;
+    }
+    .why-statement p {
+      font-size: 15px;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+    .why-statement p:last-child { margin-bottom: 0; }
+    .why-statement-verse {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.12);
+    }
+    .why-statement-verse p {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(255,255,255,0.50);
+      margin-bottom: 6px;
+    }
+    .why-statement-verse cite {
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      font-style: normal;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ── SERVICE AREA ────────────────────────────── */
+    .area {
+      padding: 72px 0;
+      background: var(--cream);
+      text-align: center;
+    }
+    .area-compass {
+      margin-top: 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .area-hub {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .area-hub-dot {
+      width: 14px;
+      height: 14px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .area-directions {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 760px;
+    }
+    .area-direction {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 20px 22px;
+      text-align: left;
+    }
+    .area-dir-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .area-dir-towns {
+      font-size: 14px;
+      color: var(--stone);
+      line-height: 1.6;
+    }
+    @media (max-width: 580px) {
+      .area-directions { grid-template-columns: 1fr; }
+    }
+
+    /* ── CTA BANNER ──────────────────────────────── */
+    .cta-banner {
+      background: var(--navy);
+      padding: 72px 0;
+    }
+    .cta-inner {
+      text-align: center;
+    }
+    .cta-inner .section-title { color: var(--white); margin-bottom: 12px; }
+    .cta-inner p {
+      color: rgba(255,255,255,0.68);
+      font-size: 16px;
+      margin-bottom: 32px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      border-color: var(--white);
+      font-weight: 600;
+    }
+    .btn-white:hover { background: var(--cream); border-color: var(--cream); }
+
+    /* ── FOOTER ──────────────────────────────────── */
+    footer {
+      background: #111825;
+      color: rgba(255,255,255,0.55);
+      padding: 48px 0 28px;
+      font-size: 13px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-brand-name {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .footer-brand-tagline {
+      font-size: 12px;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+      font-weight: 500;
+      margin-bottom: 14px;
+    }
+    .footer-brand p {
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 9px;
+      font-size: 13px;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-verse {
+      text-align: center;
+      padding-top: 24px;
+      font-family: var(--font-display);
+      font-style: italic;
+      color: rgba(255,255,255,0.28);
+      font-size: 13px;
+    }
+    .footer-verse cite {
+      display: block;
+      font-style: normal;
+      font-size: 11px;
+      letter-spacing: 0.09em;
+      color: var(--gold);
+      margin-top: 4px;
+    }
+    .footer-bottom {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 12px;
+      color: rgba(255,255,255,0.22);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 900px) {
+      .intro-grid,
+      .why-grid { grid-template-columns: 1fr; gap: 36px; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero { min-height: 100svh; }
+      .intro-image { display: none; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { text-align: center; }
+      .topbar-inner { gap: 12px; font-size: 12px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -36,65 +769,68 @@
   <nav aria-label="Main navigation">
     <div class="container">
       <div class="nav-inner">
-        <a href="index.html" class="nav-logo" aria-label="Cornerstone Exterior Cleaning Services — Home">
+        <a href="/" class="nav-logo" aria-label="Cornerstone Exterior Cleaning Services — Home">
           <span class="nav-logo-name">Cornerstone</span>
           <span class="nav-logo-sub">Exterior Cleaning Services</span>
         </a>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="#services">Services</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="testimonials.html">Reviews</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-        <a href="quote.html" class="btn btn-primary nav-cta">Get a Free Quote</a>
+        <a href="contact.html" class="btn btn-primary nav-cta">Get a Free Quote</a>
         <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
     <div class="mobile-menu" id="mobileMenu" role="navigation" aria-label="Mobile menu">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
+      <a href="#services">Services</a>
       <a href="gallery.html">Gallery</a>
       <a href="testimonials.html">Reviews</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="quote.html" class="btn btn-primary">Get a Free Quote</a>
+      <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
     </div>
   </nav>
 
   <!-- HERO -->
   <section class="hero" aria-label="Hero">
-    <div class="hero-inner">
-
-      <!-- LEFT: text -->
-      <div class="hero-left">
-        <div class="hero-content">
-          <p class="hero-eyebrow">Worcester, MA &amp; the 495 Corridor</p>
-          <h1 class="hero-title">
-            We Show Up. We Do the Work. We Leave It Better.
-          </h1>
-          <p class="hero-sub">
-            Cornerstone Exterior Cleaning Services — professional pressure washing
-            and soft washing for homeowners and commercial properties across Worcester
-            and the surrounding towns. Driveways. House siding. Windows. Done right, every time.
-          </p>
-          <div class="hero-buttons">
-            <a href="quote.html" class="btn btn-primary">Get a Free Quote</a>
-            <a href="tel:+15080000000" class="btn btn-outline">Call (508) 000-0000</a>
-          </div>
+    <div class="hero-bg-img"></div>
+    <div class="hero-bg"></div>
+    <!--
+      TO ADD YOUR PHOTO:
+      Replace the two divs above with:
+      <img src="images/hero.jpg" alt="Clean driveway after pressure washing"
+           style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;" />
+      <div class="hero-bg"></div>
+    -->
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Worcester, MA &amp; the 495 Corridor</p>
+        <h1 class="hero-title">
+          We Show Up.<br>
+          We Do the Work.<br>
+          We Leave It <em>Better</em>.
+        </h1>
+        <p class="hero-sub">
+          Cornerstone Exterior Cleaning Services — professional pressure washing
+          and soft washing for homeowners and commercial properties across Worcester
+          and the surrounding towns. Driveways. House siding. Windows. Done right, every time.
+        </p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn btn-primary">Get a Free Quote</a>
+          <a href="tel:+15080000000" class="btn btn-outline">Call (508) 000-0000</a>
+        </div>
+        <div class="hero-verse">
+          <blockquote>
+            "Whatever you do, work heartily, as for the Lord and not for men."
+            <cite>— Colossians 3:23</cite>
+          </blockquote>
         </div>
       </div>
-
-      <!-- RIGHT: hero photo -->
-      <div class="hero-right">
-        <img src="images/hero-driveway.webp"
-             alt="Pressure washing a driveway at golden hour — surface cleaner in action"
-             style="width:100%;height:100%;object-fit:cover;display:block;border-radius:var(--radius-lg);" />
-      </div>
-
     </div>
   </section>
 
@@ -126,13 +862,34 @@
     </div>
   </div>
 
+  <!-- INTRO -->
+  <section class="intro" aria-labelledby="intro-heading">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-image" aria-hidden="true">
+          <p class="intro-image-placeholder">Before &amp; after photo<br>coming soon</p>
+        </div>
+        <div class="intro-text">
+          <p class="section-label">Why Cornerstone</p>
+          <h2 class="section-title" id="intro-heading">Good work is our conviction, not a slogan.</h2>
+          <p>We started Cornerstone because we believe that good work matters — not just as a service, but as a way of life. We're a Reformed Christian-owned small business based in Worcester, MA, serving homeowners and businesses across the greater Worcester area.</p>
+          <p>We show up when we say we will. We protect your landscaping. We don't rush a job to get to the next one. And when it's done, it looks right — because that's the standard we hold ourselves to.</p>
+          <div class="intro-quote">
+            <p>"Whatever you do, work heartily, as for the Lord and not for men."</p>
+            <cite>— Colossians 3:23</cite>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- SERVICES -->
   <section class="services" id="services" aria-labelledby="services-heading">
     <div class="container">
       <div class="services-header">
         <p class="section-label">What We Do</p>
         <h2 class="section-title" id="services-heading">Exterior cleaning done right.</h2>
-        <p class="section-body">Every job gets the same standard of care — whether it's a quick driveway clean or a full exterior wash. Not a franchise. Not a crew of strangers. Someone who answers for the work.</p>
+        <p class="section-body">Every job gets the same standard of care — whether it's a quick driveway clean or a full exterior wash. We're not a franchise. You get us.</p>
       </div>
       <div class="services-grid">
 
@@ -141,7 +898,7 @@
             <svg viewBox="0 0 24 24"><path d="M12 2L12 22M8 6l-4 16M16 6l4 16M4 10h16M3 18h18"/></svg>
           </div>
           <h3 class="service-name">Driveway &amp; Flatwork</h3>
-          <p class="service-desc">Concrete, asphalt, pavers, walkways, and steps. We use a professional rotary surface cleaner — no zebra stripes, no damage, just an even, thorough clean that holds up.</p>
+          <p class="service-desc">Concrete, asphalt, pavers, walkways, patios. We use a professional rotary surface cleaner — no zebra stripes, no damage, just an even, thorough clean.</p>
           <a href="services.html#flatwork" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.03em;">Learn more →</a>
         </article>
 
@@ -150,7 +907,7 @@
             <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
           </div>
           <h3 class="service-name">House Soft Washing</h3>
-          <p class="service-desc">Low-pressure, high-result exterior house washing. Safe for vinyl siding, wood, stucco, and painted surfaces. Kills mold and algae at the source so it stays clean longer.</p>
+          <p class="service-desc">Low-pressure, high-result exterior house washing. Safe for vinyl siding, wood, stucco, and painted surfaces. Kills mold and algae at the source.</p>
           <a href="services.html#softwash" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.03em;">Learn more →</a>
         </article>
 
@@ -159,40 +916,19 @@
             <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
           </div>
           <h3 class="service-name">Window Cleaning</h3>
-          <p class="service-desc">Streak-free exterior window cleaning. We work carefully around screens, sills, and trim — no ladders left unattended, no drips, no shortcuts.</p>
+          <p class="service-desc">Streak-free exterior window cleaning. We treat your home with care — no ladders left unattended, no drips on your sills or trim.</p>
           <a href="services.html#windows" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.03em;">Learn more →</a>
         </article>
 
-        <article class="service-card">
+        <article class="service-card" style="background:var(--white);border:1px solid var(--border);">
           <div class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
           </div>
           <h3 class="service-name">And Much More</h3>
-          <p class="service-desc">Deck &amp; patio, fence washing, gutter brightening, plus retaining walls, outdoor furniture, trash bins, and commercial work — if it's on the outside of your property and needs cleaning, ask us.</p>
+          <p class="service-desc">Fence washing, deck cleaning, patios, trash cans, retaining walls, and much more.</p>
           <a href="services.html" style="display:inline-block;margin-top:16px;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:0.03em;">See all services →</a>
         </article>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro" aria-labelledby="intro-heading">
-    <div class="container">
-      <div class="intro-grid">
-        <div class="intro-image">
-          <img src="images/patio-before-after.jpg" alt="Stone patio before and after cleaning — dramatic transformation" loading="lazy" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius-lg);" />
-        </div>
-        <div class="intro-text">
-          <p class="section-label">Why Cornerstone</p>
-          <h2 class="section-title" id="intro-heading">Good work is our conviction, not a slogan.</h2>
-          <p>We started Cornerstone because we believe that good work matters — not just as a service, but as a way of life. We're a Christian-owned small business based in Worcester, MA, serving homeowners and businesses across the greater Worcester area.</p>
-          <p>We show up when we say we will. We protect your landscaping. We don't rush a job to get to the next one. And when it's done, it looks right — because that's the standard we hold ourselves to.</p>
-          <div class="intro-quote">
-            <p>"Whatever you do, work heartily, as for the Lord and not for men."</p>
-            <cite>— Colossians 3:23</cite>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -241,16 +977,10 @@
               </div>
             </div>
           </div>
-          <div class="why-cta">
-            <a href="about.html">
-              Learn more about us
-              <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-          </div>
         </div>
         <div class="why-statement" role="complementary" aria-label="Our faith and values">
           <h3 class="why-statement-title">Built on something that doesn't move.</h3>
-          <p>Cornerstone is a Christian-owned business. The name isn't incidental — a cornerstone is the first stone set in a foundation, the one everything else aligns to.</p>
+          <p>Cornerstone is a Reformed Christian-owned business. The name isn't incidental — a cornerstone is the first stone set in a foundation, the one everything else aligns to.</p>
           <p>For us, that foundation is Christ. And that changes everything about why we work the way we do. We don't do good work to impress customers or build a reputation. We do it because we believe that excellent work — done honestly, with care — is an act of worship.</p>
           <p>Abraham Kuyper said it plainly: "There is not a square inch in the whole domain of our human existence over which Christ does not cry: Mine!" Every job we take is part of that domain. We take it seriously because Yahweh is Lord of all, including our work.</p>
           <div class="why-statement-verse">
@@ -267,43 +997,37 @@
     <div class="container">
       <p class="section-label">Where We Work</p>
       <h2 class="section-title" id="area-heading">Proudly serving the greater Worcester area.</h2>
-      <p class="section-body" style="margin:0 auto 28px;text-align:center;">
-        We serve Worcester and the surrounding communities — roughly a 30-minute radius.
-        Not sure if you're in range? Just call. Odds are we can get to you.
-      </p>
+      <p class="section-body" style="margin:0 auto 24px;text-align:center;">We serve Worcester and the surrounding communities along the major corridors. Not sure if you're in range? Just call — odds are we do.</p>
 
-      <div class="area-map-wrap">
-        <iframe
-          title="Cornerstone Exterior Cleaning — Service Area"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188442.23530491864!2d-71.97867!3d42.2700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e406b8e069c3c9%3A0x4044cbe29da3fa3e!2sWorcester%2C%20MA!5e0!3m2!1sen!2sus!4v1"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          aria-label="Map showing Cornerstone service area around Worcester, MA">
-        </iframe>
+      <div class="area-compass" role="presentation" aria-label="Service area by corridor">
+
+        <div class="area-hub">
+          <div class="area-hub-dot" aria-hidden="true"></div>
+          <span>Worcester</span>
+        </div>
+
+        <div class="area-directions">
+          <div class="area-direction">
+            <div class="area-dir-label">I-290 East</div>
+            <div class="area-dir-towns">Shrewsbury · Northborough · Boylston · Marlborough · Hudson</div>
+          </div>
+          <div class="area-direction">
+            <div class="area-dir-label">I-495 South</div>
+            <div class="area-dir-towns">Westborough · Southborough · Hopkinton · Grafton · Milford · Upton</div>
+          </div>
+          <div class="area-direction">
+            <div class="area-dir-label">I-290 West &amp; Route 9</div>
+            <div class="area-dir-towns">Auburn · Leicester · Spencer · Charlton · Sutton</div>
+          </div>
+          <div class="area-direction">
+            <div class="area-dir-label">I-190 North</div>
+            <div class="area-dir-towns">Holden · Paxton · Rutland · Sterling · Princeton</div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="area-towns" role="list" aria-label="Towns served">
-        <span class="area-town-pill" role="listitem">Worcester</span>
-        <span class="area-town-pill" role="listitem">Shrewsbury</span>
-        <span class="area-town-pill" role="listitem">Northborough</span>
-        <span class="area-town-pill" role="listitem">Westborough</span>
-        <span class="area-town-pill" role="listitem">Southborough</span>
-        <span class="area-town-pill" role="listitem">Grafton</span>
-        <span class="area-town-pill" role="listitem">Holden</span>
-        <span class="area-town-pill" role="listitem">Boylston</span>
-        <span class="area-town-pill" role="listitem">Auburn</span>
-        <span class="area-town-pill" role="listitem">Leicester</span>
-        <span class="area-town-pill" role="listitem">Paxton</span>
-        <span class="area-town-pill" role="listitem">Rutland</span>
-        <span class="area-town-pill" role="listitem">Sterling</span>
-        <span class="area-town-pill" role="listitem">Hopkinton</span>
-        <span class="area-town-pill" role="listitem">Milford</span>
-        <span class="area-town-pill" role="listitem">Marlborough</span>
-        <span class="area-town-pill" role="listitem">Hudson</span>
-      </div>
-
-      <p style="text-align:center;margin-top:24px;font-size:14px;color:var(--text-muted);">
+      <p style="text-align:center;margin-top:32px;font-size:14px;color:var(--text-muted);">
         Don't see your town? <a href="tel:+15080000000" style="color:var(--navy);font-weight:600;">Give us a call</a> — we'll let you know.
       </p>
     </div>
@@ -316,7 +1040,7 @@
         <h2 class="section-title" id="cta-heading">Ready for a cleaner home?</h2>
         <p>Free estimates, no pressure, no obligation. We'll get back to you within 24 hours.</p>
         <div class="cta-buttons">
-          <a href="quote.html" class="btn btn-white">Request a Free Quote</a>
+          <a href="contact.html" class="btn btn-white">Request a Free Quote</a>
           <a href="tel:+15080000000" class="btn btn-outline">Call (508) 000-0000</a>
         </div>
       </div>
@@ -330,23 +1054,22 @@
         <div class="footer-brand">
           <p class="footer-brand-name">Cornerstone Exterior Cleaning</p>
           <p class="footer-brand-tagline">Worcester, MA — Christian-Owned &amp; Operated</p>
-          <p>Serving Worcester and the greater Worcester area with honest work and professional results. Fully insured. Free estimates always.</p>
+          <p>Serving Worcester and the 495 corridor with honest work and professional results. Fully insured. Free estimates always.</p>
         </div>
         <div class="footer-col">
           <h4>Services</h4>
-          <a href="services.html#softwash">House Soft Washing</a>
           <a href="services.html#flatwork">Driveway &amp; Flatwork</a>
-          <a href="services.html#deckpatio">Deck &amp; Patio</a>
+          <a href="services.html#softwash">House Soft Washing</a>
           <a href="services.html#windows">Window Cleaning</a>
           <a href="services.html#fences">Fence Washing</a>
-          <a href="services.html#gutters">Gutter Brightening</a>
+          <a href="services.html">All Services</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="about.html">About Us</a>
           <a href="gallery.html">Before &amp; After</a>
           <a href="testimonials.html">Reviews</a>
-          <a href="quote.html">Get a Quote</a>
+          <a href="contact.html">Get a Quote</a>
           <a href="tel:+15080000000">(508) 000-0000</a>
         </div>
       </div>
