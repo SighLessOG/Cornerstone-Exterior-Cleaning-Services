@@ -1135,10 +1135,17 @@
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         border-bottom: 2px solid var(--gold);
-        position: sticky;
-        top: 0;
-        z-index: 90;
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        z-index: 99;
       }
+      /* push page content down so fixed bar doesn't overlap it */
+      .page-header, .hero, .breadcrumb, .contact-section, section:first-of-type {
+        scroll-margin-top: 114px;
+      }
+      body { padding-top: 46px; }
       .mobile-cta-bar a:first-child {
         display: flex; align-items: center; justify-content: center; gap: 8px;
         padding: 13px 10px;
