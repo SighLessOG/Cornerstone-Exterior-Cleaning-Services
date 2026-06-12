@@ -1136,13 +1136,12 @@
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         border-bottom: 2px solid var(--gold);
-        position: fixed;
+        position: sticky;
         top: 68px;
         left: 0;
         right: 0;
         z-index: 98;
       }
-      body { padding-top: 42px; }
       .mobile-cta-bar a:first-child {
         display: flex; align-items: center; justify-content: center; gap: 8px;
         padding: 10px;
