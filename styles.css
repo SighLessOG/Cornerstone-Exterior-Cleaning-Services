@@ -1126,12 +1126,13 @@
       .contact-info-card { padding: 28px 24px; }
     }
 
+
     /* ── MOBILE CTA BAR (all pages except homepage) ── */
     .mobile-cta-bar {
       display: none !important;
     }
     @media (max-width: 768px) {
-      .topbar { display: none; }
+      .mobile-cta-bar {
         display: grid !important;
         grid-template-columns: 1fr 1fr;
         border-bottom: 2px solid var(--gold);
@@ -1139,16 +1140,12 @@
         top: 68px;
         left: 0;
         right: 0;
-        z-index: 99;
+        z-index: 98;
       }
-      /* push page content down so fixed bar doesn't overlap it */
-      .page-header, .hero, .breadcrumb, .contact-section, section:first-of-type {
-        scroll-margin-top: 114px;
-      }
-      body { padding-top: 46px; }
+      body { padding-top: 42px; }
       .mobile-cta-bar a:first-child {
         display: flex; align-items: center; justify-content: center; gap: 8px;
-        padding: 10px 10px;
+        padding: 10px;
         background: var(--navy);
         color: #fff;
         font-size: 13px; font-weight: 600;
@@ -1157,7 +1154,7 @@
       }
       .mobile-cta-bar a:last-child {
         display: flex; align-items: center; justify-content: center; gap: 8px;
-        padding: 10px 10px;
+        padding: 10px;
         background: var(--gold);
         color: #fff;
         font-size: 13px; font-weight: 600;
